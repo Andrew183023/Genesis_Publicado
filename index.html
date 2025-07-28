@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Genesis v1 - Terminal</title>
+  <style>
+    body {
+      background-color: #0d1117;
+      color: #c9d1d9;
+      font-family: monospace;
+      padding: 40px;
+    }
+
+    h1 {
+      color: #58a6ff;
+    }
+
+    input, button {
+      font-family: monospace;
+      background-color: #161b22;
+      border: 1px solid #30363d;
+      color: #fff;
+      padding: 10px;
+      width: 100%;
+      margin-bottom: 10px;
+    }
+
+    #resposta {
+      background-color: #21262d;
+      padding: 20px;
+      white-space: pre-wrap;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h1>🧠 Genesis Terminal</h1>
+  <p>Digite um comando para a FlowMind:</p>
+  <input type="text" id="prompt" placeholder="Ex: Qual a missão da FlowMind hoje?" />
+  <button onclick="enviarComando()">Enviar</button>
+
+  <h2>📡 Resposta:</h2>
+  <div id="resposta">...</div>
+
+  <script>
+    async function enviarComando() {
+      const prompt = document.getElementById("prompt").value;
+      const respostaDiv = document.getElementById("resposta");
+
+      const response = await fetch("http://localhost:8000/genesis/comando", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ prompt })
+      });
+
+      const data = await response.json();
+      respostaDiv.textContent = JSON.stringify(data, null, 2);
+    }
+  </script>
+</body>
+</html>
