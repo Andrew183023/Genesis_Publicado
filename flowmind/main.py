@@ -1,11 +1,21 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
+from fastapi.middleware.cors import CORSMiddleware
 import openai
 import os
 
 app = FastAPI()
 
-# Pegando a chave da OpenAI do ambiente
+# ✅ CORS liberado pra acesso do frontend
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Em produção, troque por seu domínio
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+# ✅ API KEY OpenAI
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
 class Prompt(BaseModel):
@@ -25,12 +35,15 @@ def processar_ia(dados: Prompt):
             max_tokens=200
         )
 
-        # Aqui é onde normalmente dá problema:
-        mensagem = resposta["choices"][0]["message"]["content"]
+        mensagem = resposta.get("choices", [{}])[0].get("message", {}).get("content", "")
+
+        if not mensagem:
+            return {"erro": "Sem resposta da IA."}
 
         return {"resposta": mensagem}
 
     except Exception as e:
         return {"erro": str(e)}
+
 
 
