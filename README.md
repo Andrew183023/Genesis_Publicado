@@ -1,8 +1,4 @@
-# Reexecutando após o reset do ambiente
-from datetime import datetime
 
-# Conteúdo do README.md
-readme_content = """
 # 🧠 Genesis OS — O Sistema com Alma
 
 **Genesis OS** é o primeiro sistema operacional com personalidade, humor, trilha sonora e propósito.
