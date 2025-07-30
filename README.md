@@ -1,73 +1,52 @@
-# 🌱 GENESIS – Sistema Operacional com Alma Digital
+# Reexecutando após o reset do ambiente
+from datetime import datetime
 
-![Status](https://img.shields.io/badge/status-em%20desenvolvimento-blue)
-![Powered by Flow](https://img.shields.io/badge/flow-inteligente-green)
+# Conteúdo do README.md
+readme_content = """
+# 🧠 Genesis OS — O Sistema com Alma
 
-**Criado por:** Andrew Michael de Oliveira  
-**Repositório Oficial da Genesis – Flow Core Group**
+**Genesis OS** é o primeiro sistema operacional com personalidade, humor, trilha sonora e propósito.
 
----
-
-## 🚀 Sobre o Projeto
-
-A **Genesis** não é apenas um sistema.  
-Ela é o **nascimento de uma nova era digital com propósito, alma e inteligência reflexiva**.
-
-> Um sistema operacional modular com IA real, onde o usuário é o centro da experiência, acompanhado por um reflexo digital que pensa e evolui com ele.
-
-Módulos já integrados:
-
-- ✅ FlowMind – Cérebro semântico com IA real
-- ✅ Genesis Terminal – Interface com comandos inteligentes
-- ✅ FlowOps – Inteligência tributária para empresas e criadores
+Criado por **Andrew Michael de Oliveira**, o sistema integra produtividade real com entretenimento, cultura pop, música e inteligência artificial viva.
 
 ---
 
-## 👁️ Demonstração
+## 🚀 Visão
 
-![Genesis funcionando](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNnEyM2FwdTk4czk2OWJ3Z2ljOHJmeWZ6Zm82Y21mdDJiNTkybHR0YyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/Cchzk3eFrZhduwmHHh/giphy.gif)
+> *"A Genesis não é só um sistema. É a trilha sonora da sua vida digital."*
 
 ---
 
-## 📦 Executando o Projeto (Docker)
+## 📦 Funcionalidades (MVP atual)
+
+- Terminal personalizado estilo sci-fi
+- IA integrada com **FlowMind** (respostas reais via API)
+- Modo Chaos Engine (em desenvolvimento)
+- Modo Music Mode (em projeto)
+- Sistema modular com potencial mobile, companion e web
+
+---
+
+## 🔗 Documentos Oficiais
+
+- 📜 Manifesto Oficial da Genesis OS (em breve PDF público)
+- 📄 Certificado de Autoria (hash digital abaixo)
+- 🔐 Hash SHA-256: `6fc100ef9cc4d68ef6f6e7e9b16f849b79d8c36c2378acff0bd698817d9efb39`
+
+---
+
+## 👨‍💻 Como rodar (em desenvolvimento)
 
 ```bash
-git clone https://github.com/Andrew183023/Genesis_Publicado.git
-cd Genesis_Publicado
-docker-compose up --build
-```
-
-- O backend da FlowMind rodará na porta `8001`
-- A Genesis Terminal estará disponível na porta `8000`
-- A interface de comandos pode ser acessada via `index.html`
-
----
-
-## 📜 Manifesto Oficial
-
-Leia o Manifesto completo da Genesis:  
-[📄 Manifesto_Genesis_FlowCore.pdf](./Manifesto_Genesis_FlowCore.pdf)
-
----
-
-## 🛠️ Tecnologias
-
+# Requisitos
+- Python 3.10+
 - FastAPI
-- Python
-- Docker
-- OpenAI API
-- Reflexo Personalizado (em progresso)
-- Modularidade escalável
+- Docker (opcional)
 
----
+# Clone o repositório
+git clone https://github.com/Andrew183023/Genesis_Publicado.git
 
-## 🤝 Contato
+# Execute o projeto
+cd Genesis_Publicado
+uvicorn main:app --reload
 
-Quer saber mais, colaborar ou compartilhar ideias?  
-Me chama no [Instagram](https://instagram.com/seu_insta_aqui) ou [LinkedIn](https://linkedin.com/in/seu_linkedin).
-
-> *"Genesis não é só código. É alma digital em ação."*
-
----
-
-**Flow Core Group – com propósito, com alma, com você.**
